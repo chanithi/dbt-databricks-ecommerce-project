@@ -1,10 +1,43 @@
-Welcome to your new dbt project!
+Project Overview
+
+This project demonstrates how to use DBT with Databricks to build a simple analytics pipeline.
+
+Architecture
+
+Bronze Tables (Databricks)
+        ↓
+DBT Staging Models
+        ↓
+DBT Mart Models
+        ↓
+Data Quality Tests
+
+Technologies
+
+- Databricks
+- DBT
+- SQL
+
+DBT Concepts Covered
+
+- Sources
+- Staging Models
+- Fact & Dimension Models
+- ref()
+- source()
+- Data Tests
+  - unique
+  - not_null
+  - relationships
+- Documentation & Lineage
+
+<!-- Welcome to your new dbt project!
 
 ### Using the starter project
 
 Try running the following commands:
 - dbt run
-- dbt test
+- dbt test -->
 
 
 ### Resources:
