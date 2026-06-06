@@ -1,0 +1,49 @@
+version: 2
+
+# models:
+#   - name: dim_customers
+#     columns:
+#       - name: customer_id
+#         tests:
+#           - unique
+#           - not_null
+ 
+#   - name: fact_orders
+#     columns:
+#       - name: customer_id
+#         tests:
+#           - relationships:
+#               to: ref('dim_customers')
+#               field: customer_id         
+
+models:
+  - name: dim_customers
+    description: Customer dimension table
+
+    columns:
+      - name: customer_id
+        description: Unique customer identifier
+        tests:
+          - unique
+          - not_null
+
+      - name: name
+        description: Customer name
+
+      - name: city
+        description: Customer city
+
+  - name: fact_orders
+    description: Order fact table
+
+    columns:
+      - name: order_id
+        description: Unique order identifier
+
+      - name: customer_id
+        description: Customer placing the order
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id            
